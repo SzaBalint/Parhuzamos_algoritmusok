@@ -1,34 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int max_rekurziv(int tomb[],int n)
-{
-    int max = 0;
-    int i=n-1;
-    do{
-        if(max<tomb[i])
-        {
-            max=tomb[i];
-        }
-        i--;
-    }while(i>=0);
-    return max;
-}
-
-int min_rekurziv(int tomb[],int n)
-{
-    int min = tomb[n];
-    int i=n-1;
-    do{
-        if(min>tomb[i])
-        {
-            min=tomb[i];
-        }
-        i--;
-    }while(i>=0);
-    return min;
-}
-
 void kiir(int tomb[],int n)
 {
     printf("\n");
