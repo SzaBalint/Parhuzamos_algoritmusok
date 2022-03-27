@@ -2,22 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-void egyedi(int * tomb){
-    int dont =0;
-    for(int i = 0; i < 10000; i++) {    
-        for(int j = i + 1; j < 10000; j++) {    
-            if(tomb[i] == tomb[j])    
-                printf("%d\n", tomb[j]); 
-                dont =1;
-            }   
-    } 
-    if(dont==0){
+void is_unique(int * tomb){
+    bool dont =false;
+    for(int i = 0; i < 10000; i++) {
+        for(int j = i + 1; j < 10000; j++) {
+            if(tomb[i] == tomb[j])
+                printf("%d\n", tomb[j]);
+                dont =true;
+            }
+    }
+    if(dont==false){
         printf("A osszes elem kulonbozik!\n");
     }
     else{
         printf("Nem mindegyik elem kulombozik");
     }
- }    
+ }
 
 int main()
 {
@@ -28,21 +28,21 @@ clock_t start, end;
 start = clock();
 
 for (int i = 0; i < 10000 ;i++) {
-    tomb[i] = rand();    
-}   
+    tomb[i] = rand();
+}
 
 for(int i = 0;i<10000;i++)
     {
-          for(int j = i + 1; j < 10000; j++) {    
+          for(int j = i + 1; j < 10000; j++) {
                 if(tomb[j] == tomb[i])
                 {
-                    tomb[j] = rand(); 
+                    tomb[j] = rand();
                 }
             }
  }
 
-    end = clock();  
-    
+    end = clock();
+
     /*for(int j =0; j<10000 ; j++){
     printf("%d, ",tomb[j]);
     }*/
