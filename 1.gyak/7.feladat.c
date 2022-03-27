@@ -1,33 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int count(int n)
+int count_primes(int n)
 {
-    int szam;
+    int num;
     int i;
     int oszto=0;
-    int db=0;
+    int count=0;
 
-    for(szam=2;szam<=n; szam++)
+    for(num=2;num<=n; num++)
     {
         oszto = 0;
-            for(i=1; i<=szam; i++)
+            for(i=1; i<=num; i++)
             {
-                if(szam % i == 0)
-                { 
-                    oszto++; 
+                if(num % i == 0)
+                {
+                    oszto++;
                 }
             }
         if (oszto == 2)
-        { 
-            db++;
-        }  
+        {
+            count++;
+        }
     }
-    return db;
+    return count;
 }
 
 int main()
 {
-    printf("%d", count(1000));
+    printf("%d", count_primes(1000));
     return 0;
 }
