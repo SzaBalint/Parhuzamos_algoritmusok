@@ -3,21 +3,21 @@
 
 int main()
 {
-    int szam1,szam2=0;
-    int dont =0;
+    int num1,num2=0;
+    bool dont =true;
     printf("Adjon meg 2 egesz szamot vesszovel elvalasztva:\n");
     do{
-            if((scanf("%d,%d",&szam1,&szam2))!=2 || szam1<szam2 || szam1==szam2){
+            if((scanf("%d,%d",&num1,&num2))!=2 || num1<num2 || num1==num2){
             printf("Hibas beolvasas!\n");
-            dont=0;
+            dont=true;
             }
             else{
-                dont=1;
+                dont=false;
             }
-    }while(dont!=1);
+    }while(dont!=false);
 
     int randomnumber;
-    randomnumber = (rand() % szam1)+szam2;
+    randomnumber = (rand() % num1)+num2;
     printf("A generealt szam: %d\n", randomnumber);
     return 0;
 }
